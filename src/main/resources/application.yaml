@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: red-service
+  cloud:
+    consul:
+      discovery:
+        instance-id: ${spring.application.name}.${random.value}
+    loadbalancer:
+      ribbon:
+        enabled: true
+server:
+  port: 0
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+        - '*'
